@@ -1,5 +1,9 @@
 # Fabrico Collections
 
+<p align="center">
+  <img src="assets/hero.svg" alt="Fabrico Collections — an opinionated Claude Code setup" width="100%">
+</p>
+
 Opinionated **Claude Code** setup for product discovery, implementation, and review.
 
 This is a customization collection — a catalog of slash commands, subagents, and skills that turn Claude Code into a
@@ -115,6 +119,10 @@ reviewer for you.
 
 ### Autopilot — complete spec → working software
 
+<p align="center">
+  <img src="assets/demo-autopilot.svg" alt="/fabrico-autopilot SPEC.md building software end to end" width="90%">
+</p>
+
 If you'd rather write one complete spec and let the system build the whole thing without babysitting each step:
 
 1. Copy [`SPEC.template.md`](SPEC.template.md) into your project as `SPEC.md` and fill it in (product summary,
@@ -131,6 +139,10 @@ logged to `ASSUMPTIONS.md`. Autonomy quality tracks spec completeness — the mo
 > file write. Keep your work in git so every step is reversible.
 
 ### Modernize or port a legacy web app
+
+<p align="center">
+  <img src="assets/demo-modernize.svg" alt="/fabrico-reverse-spec and /fabrico-modernize on a legacy web app" width="90%">
+</p>
 
 Have an old web app you want rebuilt on a modern stack — or ported to mobile/iOS? The system can reverse-engineer a
 spec straight from the running app (it drives a real Chrome via the **playwright** MCP — no extension needed) and
