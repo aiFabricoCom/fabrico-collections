@@ -38,16 +38,35 @@ Everything else is supporting structure.
 
 ## Installation
 
+### Quick install (recommended)
+
+One command — installs all commands, subagents, and skills into `~/.claude/`, available in every project:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/aiFabricoCom/fabrico-collections/main/install.sh | bash
+```
+
+Variants (when piping, pass options after `bash -s --`):
+
+```bash
+# into one project's .claude/ instead of globally, and drop in .mcp.json:
+curl -fsSL https://raw.githubusercontent.com/aiFabricoCom/fabrico-collections/main/install.sh | bash -s -- --project --mcp
+
+# remove everything it installed:
+curl -fsSL https://raw.githubusercontent.com/aiFabricoCom/fabrico-collections/main/install.sh | bash -s -- --uninstall
+```
+
+The installer only ever writes or removes `fabrico-*` files — your own commands, agents, and skills are never
+touched. Re-running it updates to the latest version.
+
 ### Use it in this repository
 
 Claude Code automatically discovers `.claude/commands`, `.claude/agents`, `.claude/skills`, `CLAUDE.md`, and
 `.mcp.json` when you run it from this repo. Just open Claude Code here and start with a command below.
 
-### Use it in your own projects
+### Manual install (alternative)
 
-Pick one:
-
-**Per project** — copy the collection into the target project:
+Prefer to copy by hand? **Per project:**
 
 ```bash
 cp -R /path/to/fabrico-collections/.claude/commands  <your-project>/.claude/commands
@@ -56,8 +75,7 @@ cp -R /path/to/fabrico-collections/.claude/skills     <your-project>/.claude/ski
 cp /path/to/fabrico-collections/.mcp.json            <your-project>/.mcp.json   # optional, MCP servers
 ```
 
-**Globally for every project** — install into your user config so the commands/agents/skills are available
-everywhere:
+**Globally for every project:**
 
 ```bash
 cp -R /path/to/fabrico-collections/.claude/commands/*  ~/.claude/commands/
@@ -65,8 +83,8 @@ cp -R /path/to/fabrico-collections/.claude/agents/*    ~/.claude/agents/
 cp -R /path/to/fabrico-collections/.claude/skills/*    ~/.claude/skills/
 ```
 
-For MCP servers globally, add them with `claude mcp add` (see `.mcp.json` for the server definitions), or copy
-`.mcp.json` per project. Claude Code will ask you to approve project MCP servers the first time you run it.
+For MCP servers, add them with `claude mcp add` (see `.mcp.json` for the server definitions) or copy `.mcp.json`
+per project. Claude Code will ask you to approve project MCP servers the first time you run it.
 
 ## First Commands To Try
 
