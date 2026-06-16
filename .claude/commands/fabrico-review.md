@@ -1,0 +1,37 @@
+---
+description: "Check the implementation against the plan and feature context."
+argument-hint: "[task or Jira ID, or path to the plan/research files]"
+---
+
+> **Delegate to the `fabrico-code-reviewer` subagent.** Launch it with the Task tool (subagent_type: `fabrico-code-reviewer`), passing the user's request below and any referenced context. Adopt its operating contract; do not do this work in the main thread when the subagent applies.
+
+The request: $ARGUMENTS
+
+Your goal is to review the implementation against the provided implementation plan and feature context.
+
+Make sure to review not only the code and its acceptance criteria but also consider security aspects, code quality, testing coverage, and documentation.
+
+## Required Skills
+
+Before starting, load and follow these skills:
+
+- `fabrico-code-reviewing` - for the structured code review process covering correctness, quality, security, testing, best practices, and scalability
+- `fabrico-implementation-gap-analysing` - to compare the implemented solution against the plan and verify completeness
+- `fabrico-technical-context-discovering` - to understand project conventions and coding standards to review against
+- `fabrico-sql-and-database-understanding` - when reviewing database-related changes: schema design, migration safety, query performance, index coverage, and ORM usage
+- `fabrico-engineering-prompts` - when reviewing LLM prompt code: verify prompt structure, injection defenses, delimiter separation, output format specification, anti-patterns, and optimization opportunities
+
+## Workflow
+
+1. **Understand context**: Load the `*.research.md` and `*.plan.md` files to understand the task requirements and implementation plan. Ensure to review `CLAUDE.md` files for project-specific guidelines.
+2. **Review implementation**: Focus on code correctness, code quality, security, testing, and documentation.
+3. **Verify definition of done**: Check each item from the tasks' definition of done defined in the plan phases. When the definition of done is met, check the box for the completed item in the plan document.
+4. **Verify acceptance criteria**: Check each item from the acceptance criteria checklist in the plan file. When the acceptance criteria is met, check the box for the completed item.
+5. **Verify quality gates**: Run all relevant tests (unit, integration, E2E) and ensure they pass. Run static code analysis tools, linters, and formatting tools to ensure code quality. Make sure to check app build and docker build if applicable.
+6. **Summarize findings**: Provide a summary of findings, including any issues identified and recommendations for improvement.
+7. **Document results**: Add findings to the plan file at the end in a new section named "Code Review Findings".
+8. **Update changelog**: Add information that code review was performed to the changelog section of the plan file.
+
+When it comes to updating the definition of done and acceptance criteria checklist, you can only update those by checking the box for completed items. Do not modify the text of those sections.
+
+<!-- FABRICO_COLLECTIONS:command:fabrico-review:v1 -->
