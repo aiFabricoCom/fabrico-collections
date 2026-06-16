@@ -12,6 +12,16 @@ team of specialized agents that can research, plan, build, and review software f
 > See [`CLAUDE.md`](CLAUDE.md) for the conventions and orchestration model, and the full guide in
 > [`docs/`](docs/README.md).
 
+## Install in one command
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/aiFabricoCom/fabrico-collections/main/install.sh | bash
+```
+
+Installs every command, subagent, and skill into `~/.claude/` so `/fabrico-*` works in any project. It only ever
+touches `fabrico-*` files, and re-running it updates to the latest version. See [Installation](#installation) for
+project-scoped install, `.mcp.json`, uninstall, and all options.
+
 ## What Matters Most
 
 You do not need to learn every agent, command, or skill up front. For most teams the main entry points are:
@@ -58,6 +68,17 @@ curl -fsSL https://raw.githubusercontent.com/aiFabricoCom/fabrico-collections/ma
 
 The installer only ever writes or removes `fabrico-*` files — your own commands, agents, and skills are never
 touched. Re-running it updates to the latest version.
+
+| Option | Effect |
+| --- | --- |
+| _(none)_ | Install globally into `~/.claude/` (default) |
+| `--project [DIR]` | Install into `DIR/.claude/` instead (DIR defaults to the current directory) |
+| `--mcp` | Also copy `.mcp.json` (project mode; only if absent) |
+| `--ref REF` | Install a specific branch, tag, or commit (default: `main`) |
+| `--uninstall` | Remove all `fabrico-*` artifacts from the target |
+| `--help` | Show usage |
+
+The script needs only `curl` (or `wget`) and `tar` — no `git` required. Source: [`install.sh`](install.sh).
 
 ### Use it in this repository
 
