@@ -13,6 +13,7 @@ At a glance: **28 slash commands**, **21 subagents**, **34 skills**, all prefixe
 3. [Autopilot](autopilot.md) — write one complete spec, get working software autonomously.
 4. [Legacy modernization](legacy-modernization.md) — reverse-engineer a spec from a running web app (Playwright/Chrome, incl. login) and rebuild it on a modern stack or mobile.
 5. [Extending the system](extending.md) — author your own commands, subagents, skills, and `CLAUDE.md` memory.
+6. [Going to production](going-to-production.md) — harden an AI-built app for real users (and a recommended service).
 
 ## Reference
 
