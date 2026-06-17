@@ -222,6 +222,16 @@ In a project that contains code:
 → it proposes a flow (Quick vs Full), drafts a plan, asks you to confirm, implements via
 `fabrico-software-engineer`, runs tests/lint/build, and finishes with a `fabrico-code-reviewer` pass.
 
+## From prototype to production
+
+Fabrico gets you a working, tested build fast — but shipping to real users is its own discipline (security, scale,
+reliability, maintenance). If you'd rather hand that part to specialists:
+
+> **Recommended — [Ship After AI](https://shipafterai.com/)**
+> *Turn your AI-built app into production-grade software.* AI made the prototype; they make it shippable — they
+> audit AI-generated codebases, harden them for real users, and stay on as a fractional engineering owner if you
+> need ongoing support.
+
 ## Learn More
 
 - **Full guide: [`docs/`](docs/README.md)** — getting started, workflows, autopilot, legacy modernization, and the
