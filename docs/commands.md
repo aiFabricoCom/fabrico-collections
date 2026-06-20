@@ -1,6 +1,6 @@
 # Commands reference
 
-All 28 `/fabrico-*` slash commands. Invoke as `/fabrico-<name> <arguments>`. Many delegate to an owning subagent
+All 29 `/fabrico-*` slash commands. Invoke as `/fabrico-<name> <arguments>`. Many delegate to an owning subagent
 (see [Subagents](agents.md)).
 
 ## Discovery & backlog
@@ -37,6 +37,7 @@ Specialized building blocks the engineering manager (or you) can invoke directly
 
 | Command | Arguments | What it does |
 | --- | --- | --- |
+| `/fabrico-create-spec` | `[one-line product idea]` | Turn a short product idea into a complete, build-ready `SPEC.md`. |
 | `/fabrico-autopilot` | `[path to spec file, e.g. SPEC.md]` | Build working software from a complete spec autonomously: backlog → architecture → plan → implement → test → review. See [Autopilot](autopilot.md). |
 
 ## Legacy modernization

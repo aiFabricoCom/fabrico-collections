@@ -5,6 +5,9 @@ pausing at every gate. It's the path for "I'll write one good spec and let it ru
 
 ## How to use it
 
+> **Don't want to write the spec by hand?** Run `/fabrico-create-spec <your idea>` (see [Commands](commands.md))
+> to generate `SPEC.md` from a one-liner, then skip to step 2.
+
 1. Copy the template into your project and fill it in:
    ```bash
    cp /path/to/fabrico-collections/SPEC.template.md ./SPEC.md

@@ -4,7 +4,7 @@ Opinionated **Claude Code** setup for product discovery, implementation, review,
 modernization. This is a customization collection — a catalog of slash commands, subagents, and skills that turn
 Claude Code into a team of specialized agents.
 
-At a glance: **28 slash commands**, **21 subagents**, **34 skills**, all prefixed `fabrico-`.
+At a glance: **29 slash commands**, **21 subagents**, **34 skills**, all prefixed `fabrico-`.
 
 ## Guides
 
@@ -17,7 +17,7 @@ At a glance: **28 slash commands**, **21 subagents**, **34 skills**, all prefixe
 
 ## Reference
 
-- [Commands](commands.md) — all 28 `/fabrico-*` slash commands.
+- [Commands](commands.md) — all 29 `/fabrico-*` slash commands.
 - [Subagents](agents.md) — all 21 `fabrico-*` subagents and their model tiers.
 - [Skills](skills.md) — all 34 `fabrico-*` skills.
 

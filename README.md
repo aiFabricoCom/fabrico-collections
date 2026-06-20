@@ -111,6 +111,7 @@ per project. Claude Code will ask you to approve project MCP servers the first t
 
 Open your target project in Claude Code and run one of:
 
+- `/fabrico-create-spec <product idea>` — one-line idea → complete `SPEC.md`
 - `/fabrico-autopilot SPEC.md` — complete spec → working software, autonomously (see Autopilot above)
 - `/fabrico-reverse-spec <url>` — running web app → platform-agnostic `SPEC.md` (via Chrome/Playwright)
 - `/fabrico-modernize <url|SPEC.md> [web|ios|react-native]` — reverse-spec → migration plan → rebuild
@@ -164,7 +165,8 @@ reviewer for you.
 
 If you'd rather write one complete spec and let the system build the whole thing without babysitting each step:
 
-1. Copy [`SPEC.template.md`](SPEC.template.md) into your project as `SPEC.md` and fill it in (product summary,
+1. Get a `SPEC.md`: generate it from a one-liner with `/fabrico-create-spec <your idea>`, or copy
+   [`SPEC.template.md`](SPEC.template.md) and fill it in by hand (product summary,
    roles, in/out of scope, user stories **with acceptance criteria**, data model, stack or "you decide",
    integrations, UI notes, autonomy boundaries).
 2. Run `/fabrico-autopilot SPEC.md`.
