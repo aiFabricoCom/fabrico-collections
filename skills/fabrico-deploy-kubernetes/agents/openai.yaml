@@ -1,0 +1,7 @@
+interface:
+  display_name: "Fabrico Deploy Kubernetes"
+  short_description: "Run the deploy kubernetes workflow with Fabrico"
+  default_prompt: "Use $fabrico-collections:fabrico-deploy-kubernetes to run this workflow for my request."
+
+policy:
+  allow_implicit_invocation: false

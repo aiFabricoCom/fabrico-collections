@@ -1,0 +1,50 @@
+---
+name: fabrico-explore-materials
+description: "Explore workshop materials for business context before backlog extraction."
+---
+
+> **Invocation portability:** `$fabrico-*` below means the discovered entry workflow. Use the unqualified name for repository or filesystem installs and `$fabrico-collections:fabrico-*` for plugin installs.
+
+## Input
+
+Use the user’s current request as the workflow input. Expected context: `[workshop materials: transcripts, designs, PDFs, or references]`.
+
+> **Prefer the `fabrico-business-analyst` subagent.** When that custom agent is available, spawn it with the user's request and referenced context and adopt its operating contract. If this workflow is already running inside `fabrico-business-analyst`, perform the orchestration locally and never spawn another BA orchestrator. If the profile is unavailable, as in a skills-only plugin installation, perform the complete workflow in the current thread with the required skills and the same analysis contract.
+Explore the provided workshop materials and produce a business/context summary before any backlog extraction begins. Use this when the user explicitly wants exploration first, or when the materials are too ambiguous to commit to epics and stories yet.
+
+The expected outcome is a focused `workshop-context-summary.md` placed in `specifications/<workshop-name>/` that captures the business context, likely epics, open questions, and a recommendation on whether the work is ready for `intent-brief.md` and extraction.
+
+This workflow starts from workshop materials such as transcripts, Figma/FigJam designs, PDFs, codebase context, or other reference documents. If a project baseline already exists, use it as continuity context.
+
+Exploration may be delegated to the internal analysis worker, but the results always return through the BA orchestrator before anything moves toward extraction.
+
+Do not create epics, stories, or Jira-ready backlog items in this mode unless the user explicitly asks to continue after the exploration summary.
+
+## Required Skills
+
+- `fabrico-task-analysing` - to synthesize workshop context, spot ambiguities, and compare the materials with any existing backlog baseline.
+- `fabrico-transcript-processing` - to clean and structure raw transcript input when present.
+- `fabrico-codebase-analysing` - to understand existing system context when it helps interpret the workshop materials.
+
+## Workflow
+
+1. Review the provided materials and any existing project baseline if available.
+2. Clean the transcript first if raw discussion notes are present.
+3. Summarize the workshop/topic context in business language.
+4. Identify the main actors, business entities, and likely epic candidates.
+5. Note any overlap with existing backlog or baseline items if available.
+6. Capture ambiguities, risks, and open questions that should be resolved before extraction.
+7. Conclude with a recommendation on whether the materials are ready for `intent-brief.md` and task extraction.
+
+## Output Specification
+
+Create `specifications/<workshop-name>/workshop-context-summary.md` with at least these sections:
+- Workshop/topic context
+- Actors and business entities
+- Existing backlog or baseline overlap
+- Likely epic candidates
+- Key ambiguities, risks, and open questions
+- Recommendation on readiness for intent brief / extraction
+
+Keep the output business-facing. Do not create Jira-ready epics or stories in this mode unless the user explicitly asks to continue.
+

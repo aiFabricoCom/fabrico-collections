@@ -1,47 +1,47 @@
 # assets
 
-Visuals used in the project [`README.md`](../README.md).
+Visuals used by the project [`README.md`](../README.md).
 
-## What's here
+## Contents
 
 | File | Type | Notes |
 | --- | --- | --- |
-| `hero.svg` | static SVG | Banner. Renders directly in GitHub — no tooling needed. |
-| `demo-autopilot.svg` | static SVG | Terminal "screenshot" of the `/fabrico-autopilot` flow. |
-| `demo-modernize.svg` | static SVG | Terminal "screenshot" of `/fabrico-reverse-spec` + `/fabrico-modernize`. |
-| `demo-autopilot.sh` | bash | Scripted, representative output for recording a GIF. |
-| `demo-autopilot.tape` | VHS tape | Recipe to render `demo-autopilot.gif`. |
+| `hero.svg` | static SVG | Codex-oriented project banner. |
+| `demo-autopilot.svg` | static SVG | Terminal illustration of `$fabrico-autopilot`. |
+| `demo-modernize.svg` | static SVG | Terminal illustration of `$fabrico-reverse-spec` and `$fabrico-modernize`. |
+| `demo-autopilot.sh` | bash | Deterministic representative output for recording a GIF. |
+| `demo-autopilot.tape` | VHS tape | Recipe that renders `demo-autopilot.gif`. |
 
-The SVGs are hand-made (not recordings) and work in the README out of the box. The `.tape` + `.sh` let you
-generate a **real animated GIF** when you want motion.
+The SVG files render directly on GitHub. The tape and shell script generate a short deterministic animation.
 
 ## Generate an animated GIF
 
 ```bash
-brew install vhs                  # https://github.com/charmbracelet/vhs
-vhs assets/demo-autopilot.tape    # writes assets/demo-autopilot.gif
+brew install vhs
+vhs assets/demo-autopilot.tape
 ```
 
-Then, if you prefer the GIF over the static SVG, point the README at it:
+To use the generated GIF in the project overview:
 
 ```bash
 sed -i '' 's|assets/demo-autopilot.svg|assets/demo-autopilot.gif|' README.md
 ```
 
-## Record a real session (recommended for an authentic demo)
+## Record a real Codex session
 
-VHS runs commands for real, so you can capture an actual Claude Code run. Edit the tape's body to drive the real
-CLI in a demo project:
+VHS can also drive the real CLI in a disposable demo project. Replace the scripted-demo lines in the tape with:
 
-```
-Type "claude" Enter
+```text
+Type "codex --sandbox workspace-write --ask-for-approval on-request" Enter
 Sleep 2s
-Type "/fabrico-autopilot SPEC.md" Enter
-Sleep 30s        # let it work; trim length to taste
+Type "$fabrico-autopilot SPEC.md" Enter
+Sleep 30s
 ```
 
-## Make a demo for another command
+Use `--dangerously-bypass-approvals-and-sandbox` only in an externally isolated, disposable recording
+environment.
 
-Copy `demo-autopilot.{sh,tape}`, rename, and edit the printed lines / typed command (e.g. a
-`demo-modernize.sh` mirroring `demo-modernize.svg`). Keep clips short (8–15s) and the terminal ~1180×430 so they
-look crisp inline.
+## Make a demo for another workflow
+
+Copy `demo-autopilot.{sh,tape}`, rename it, and edit the displayed workflow and representative output. Keep clips
+short and the terminal near 1180×430 so text stays crisp inline.

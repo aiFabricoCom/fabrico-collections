@@ -1,0 +1,7 @@
+interface:
+  display_name: "Fabrico Finish Project"
+  short_description: "Close project gaps and prove completion"
+  default_prompt: "Use $fabrico-collections:fabrico-finish-project to finish the existing project identified in my request."
+
+policy:
+  allow_implicit_invocation: false

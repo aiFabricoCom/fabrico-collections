@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="260" viewBox="0 0 1000 260" role="img" aria-label="Fabrico Collections — an opinionated Claude Code setup">
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="260" viewBox="0 0 1000 260" role="img" aria-label="Fabrico Collections — an opinionated Codex setup">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0d1117"/>
@@ -13,7 +13,7 @@
   <rect x="1" y="1" width="998" height="258" rx="16" fill="url(#bg)" stroke="#30363d" stroke-width="1"/>
   <rect x="1" y="1" width="998" height="4" rx="2" fill="url(#accent)"/>
   <text x="500" y="96" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="52" font-weight="700" fill="#f0f6fc">Fabrico Collections</text>
-  <text x="500" y="134" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#8b949e">An opinionated Claude Code setup — your autonomous software team.</text>
-  <text x="500" y="180" text-anchor="middle" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', monospace" font-size="17" fill="#58a6ff">/fabrico-analyze-materials  →  /fabrico-implement  →  /fabrico-review</text>
-  <text x="500" y="220" text-anchor="middle" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', monospace" font-size="14" fill="#3fb950">29 commands · 21 subagents · 34 skills · spec→app autopilot · legacy modernization</text>
+  <text x="500" y="134" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#8b949e">Codex workflows for an autonomous software team.</text>
+  <text x="500" y="180" text-anchor="middle" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', monospace" font-size="13" fill="#58a6ff">$fabrico-analyze-materials  →  $fabrico-implement  →  $fabrico-review</text>
+  <text x="500" y="220" text-anchor="middle" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', monospace" font-size="13" fill="#3fb950">31 entry workflows · 34 supporting skills · 21 custom agents</text>
 </svg>

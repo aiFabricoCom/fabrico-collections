@@ -1,0 +1,7 @@
+interface:
+  display_name: "Fabrico Review"
+  short_description: "Run the review workflow with Fabrico"
+  default_prompt: "Use $fabrico-collections:fabrico-review to run this workflow for my request."
+
+policy:
+  allow_implicit_invocation: false

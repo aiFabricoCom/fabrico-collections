@@ -1,0 +1,7 @@
+interface:
+  display_name: "Fabrico Implement Pipeline"
+  short_description: "Run the implement pipeline workflow with Fabrico"
+  default_prompt: "Use $fabrico-collections:fabrico-implement-pipeline to run this workflow for my request."
+
+policy:
+  allow_implicit_invocation: false

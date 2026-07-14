@@ -1,0 +1,7 @@
+interface:
+  display_name: "Fabrico Research"
+  short_description: "Run the research workflow with Fabrico"
+  default_prompt: "Use $fabrico-collections:fabrico-research to run this workflow for my request."
+
+policy:
+  allow_implicit_invocation: false

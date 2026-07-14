@@ -1,0 +1,7 @@
+interface:
+  display_name: "Fabrico Review Codebase"
+  short_description: "Run the review codebase workflow with Fabrico"
+  default_prompt: "Use $fabrico-collections:fabrico-review-codebase to run this workflow for my request."
+
+policy:
+  allow_implicit_invocation: false

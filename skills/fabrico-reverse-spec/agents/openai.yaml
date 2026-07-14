@@ -1,0 +1,7 @@
+interface:
+  display_name: "Fabrico Reverse Spec"
+  short_description: "Run the reverse spec workflow with Fabrico"
+  default_prompt: "Use $fabrico-collections:fabrico-reverse-spec to run this workflow for my request."
+
+policy:
+  allow_implicit_invocation: false

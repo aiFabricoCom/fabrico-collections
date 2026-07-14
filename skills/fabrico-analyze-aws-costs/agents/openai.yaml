@@ -1,0 +1,7 @@
+interface:
+  display_name: "Fabrico Analyze Aws Costs"
+  short_description: "Run the analyze aws costs workflow with Fabrico"
+  default_prompt: "Use $fabrico-collections:fabrico-analyze-aws-costs to run this workflow for my request."
+
+policy:
+  allow_implicit_invocation: false

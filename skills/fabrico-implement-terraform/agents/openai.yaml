@@ -1,0 +1,7 @@
+interface:
+  display_name: "Fabrico Implement Terraform"
+  short_description: "Run the implement terraform workflow with Fabrico"
+  default_prompt: "Use $fabrico-collections:fabrico-implement-terraform to run this workflow for my request."
+
+policy:
+  allow_implicit_invocation: false

@@ -1,6 +1,6 @@
 # KlubManager — Specyfikacja (MVP)
 
-> Aplikacja do zarządzania amatorskim klubem piłkarskim. Gotowa do uruchomienia przez `/fabrico-autopilot SPEC.md`.
+> Aplikacja do zarządzania amatorskim klubem piłkarskim. Gotowa do uruchomienia w Codex przez `$fabrico-autopilot SPEC.md`.
 > Skopiuj ten plik do katalogu swojego projektu (np. `~/Projects/klub-sportowy/SPEC.md`) zanim odpalisz autopilota.
 > Język dokumentu: polski; terminy techniczne i nazwy bibliotek po angielsku (standard).
 

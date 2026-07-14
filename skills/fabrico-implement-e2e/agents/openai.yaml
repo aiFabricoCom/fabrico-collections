@@ -1,0 +1,7 @@
+interface:
+  display_name: "Fabrico Implement E2e"
+  short_description: "Run the implement e2e workflow with Fabrico"
+  default_prompt: "Use $fabrico-collections:fabrico-implement-e2e to run this workflow for my request."
+
+policy:
+  allow_implicit_invocation: false

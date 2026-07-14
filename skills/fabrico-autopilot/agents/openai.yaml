@@ -1,0 +1,7 @@
+interface:
+  display_name: "Fabrico Autopilot"
+  short_description: "Run the autopilot workflow with Fabrico"
+  default_prompt: "Use $fabrico-collections:fabrico-autopilot to run this workflow for my request."
+
+policy:
+  allow_implicit_invocation: false

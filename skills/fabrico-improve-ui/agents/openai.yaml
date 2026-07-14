@@ -1,0 +1,7 @@
+interface:
+  display_name: "Fabrico Improve UI"
+  short_description: "Audit and improve web and mobile UI"
+  default_prompt: "Use $fabrico-collections:fabrico-improve-ui to analyze and improve the web, iOS, or Android interface identified in my request."
+
+policy:
+  allow_implicit_invocation: false
