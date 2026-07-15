@@ -1,5 +1,5 @@
 ---
-description: "Implement the UI feature according to the research context and implementation plan, using Figma designs as the source of truth for visual implementation."
+description: "Implement a web UI feature from research and plan context, using Figma as the visual source of truth."
 argument-hint: "[task or component to implement]"
 ---
 
@@ -7,7 +7,9 @@ The request: $ARGUMENTS
 
 > **PREREQUISITE**: This command extends [/fabrico-implement-common-task](.claude/commands/fabrico-implement-common-task.md). You MUST read and follow **all steps** from that base workflow first. This command adds UI-specific behaviors on top — it does not remove or replace any base workflow steps.
 
-Implement the UI feature according to the **research context** and **implementation plan**, using Figma designs as the source of truth for visual implementation.
+Implement the web UI feature according to the **research context** and **implementation plan**, using Figma designs as the source of truth for visual implementation.
+
+This command is web-only. For native Figma work, use `/fabrico-implement-common-task` with the design and platform context, then verify through `/fabrico-improve-ui` and `fabrico-improving-ui`.
 
 ## Required Skills
 
@@ -65,4 +67,4 @@ Before step 6 of the base workflow (starting implementation), ensure:
 
 **UI verification against Figma is NOT your responsibility.** The `fabrico-engineering-manager` subagent handles the verify-fix loop by delegating to the `fabrico-ui-reviewer` subagent. Focus only on implementing the UI according to the plan and design references. If you receive a verification report with issues to fix, apply the fixes and report back.
 
-<!-- FABRICO_COLLECTIONS:command:fabrico-implement-ui-common-task:v1 -->
+<!-- FABRICO_COLLECTIONS:command:fabrico-implement-ui-common-task:v2 -->

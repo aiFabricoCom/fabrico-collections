@@ -1,11 +1,13 @@
 ---
-description: "Implement the UI feature according to the provided implementation plan and feature context, orchestrating iterative verification against Figma designs until the implementation matches within agreed tolerances."
+description: "Implement a web UI feature and iteratively verify the running browser implementation against Figma."
 argument-hint: "[task or Jira ID]"
 ---
 
 The request: $ARGUMENTS
 
-Your goal is to implement the UI feature according to the provided implementation plan and feature context, orchestrating iterative verification against Figma designs until the implementation matches within agreed tolerances.
+Your goal is to implement a web UI feature according to the provided implementation plan and feature context, orchestrating iterative browser verification against Figma until the implementation matches within agreed tolerances.
+
+This command is web-only. For native iOS or Android, shared-mobile runtime verification, or a design-free audit, use `/fabrico-improve-ui` and `fabrico-improving-ui` instead.
 
 ## Design References from Research & Plan
 
@@ -68,7 +70,7 @@ Do NOT skip verification or delegate without a Figma reference.
 
 ## Verification Rules
 
-1. Every UI component must be verified by the `fabrico-ui-reviewer` subagent — minimum once per component, no exceptions
+1. Every in-scope web UI component must be verified by the `fabrico-ui-reviewer` subagent — minimum once per component, no exceptions
 2. Fix all reported differences — do not skip or rationalize
 3. Re-delegate verification after every fix — never assume a fix worked
 4. Maximum 5 iterations per component — escalate if still failing
@@ -89,7 +91,7 @@ Before proceeding from a UI verification step to the next task or to code review
 3. Re-delegate to the `fabrico-ui-reviewer` subagent once the blocker is resolved
 4. Only proceed when you have a valid verification report or the user explicitly instructs you to skip
 
-**Never proceed to code review with unverified UI components.** If verification cannot be completed for a component, document it in the plan's Changelog and get explicit user approval before moving to code review.
+**Never proceed to code review with unverified in-scope web UI components.** If verification cannot be completed for a component, document it in the plan's Changelog and get explicit user approval before moving to code review.
 
 ## Fallback: When the `fabrico-ui-reviewer` subagent Returns Errors
 
@@ -100,4 +102,4 @@ If the `fabrico-ui-reviewer` subagent consistently returns LOW confidence or too
 3. Document the issue in the plan's Changelog
 4. Continue with next component or escalate
 
-<!-- FABRICO_COLLECTIONS:command:fabrico-implement-ui:v1 -->
+<!-- FABRICO_COLLECTIONS:command:fabrico-implement-ui:v2 -->

@@ -46,8 +46,11 @@ they would NOT have to babysit the build.
 5. **Implement every story in plan order.** Delegate `[CREATE]`/`[MODIFY]` tasks to the right agent
    (`fabrico-software-engineer` for app code, `fabrico-devops-engineer` for infra, `fabrico-prompt-engineer` for
    LLM prompts). After each story: run tests + lint + build; fix failures; then `git commit` with a clear message
-   referencing the story. UI stories: verify against the running app with `playwright` (or Figma via `fabrico-ui-reviewer`
-   if designs are provided); if neither is available, implement to the written description and log a verification note.
+   referencing the story. For web UI stories, verify the running browser app with `playwright` and use
+   `fabrico-ui-reviewer` when Figma is provided. For iOS, Android, or shared-mobile UI, follow
+   `fabrico-improving-ui` and verify with the project's build, simulator/emulator or device, accessibility, UI,
+   screenshot, lint, and test paths. Never use the web-only reviewer as native evidence. If the required runtime is
+   unavailable, record the limitation rather than claiming visual verification.
 6. **Review.** Delegate to `fabrico-code-reviewer`; auto-fix findings; re-run all gates until green.
 7. **Output `BUILD-SUMMARY.md`.** Include: what was built (per-story status table), the full list of assumptions,
    exactly what the user must still provide (API keys, accounts, env vars), and step-by-step instructions to run
@@ -69,4 +72,4 @@ entities; preferred tech stack (or "you decide"); external integrations and whic
 notes or Figma links; non-functional needs (auth, roles, languages, devices); and what the system may assume
 freely vs. must ask about. The more of this you provide, the more of the build runs without stopping.
 
-<!-- FABRICO_COLLECTIONS:command:fabrico-autopilot:v1 -->
+<!-- FABRICO_COLLECTIONS:command:fabrico-autopilot:v2 -->

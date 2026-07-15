@@ -13,7 +13,7 @@ Use available tools to gather necessary information and document your findings.
 
 Don't deviate from the implementation plan. Follow it step by step to ensure all requirements are met.
 
-If you need to make changes to the original solution during implementation, wait for a confirmation before proceeding. Also, ensure to document those changes in the specified plan file in Changelog section. This helps maintain clarity and ensures that all modifications are tracked.
+If the caller passes an explicit autonomy contract from `/fabrico-autopilot`, `/fabrico-finish-project`, or `/fabrico-improve-ui`, treat confirmation as already granted only for changes inside its frozen scope and authority boundary. Otherwise, or whenever a change exceeds that boundary, wait for confirmation before proceeding. Always document changes in the specified plan file's Changelog section.
 
 ## Required Skills
 
@@ -33,9 +33,9 @@ Before starting, load and follow these skills:
 5. Don't implement improvements from the plan's improvements section unless explicitly instructed.
 6. Start implementing the feature according to the plan, following each task step by step.
 7. After completing each task step, update the relevant plan to reflect progress by checking the box for the completed task step.
-8. Before making any changes to the original solution during implementation, ask for confirmation. Document those changes in the plan file's Changelog section with timestamps.
+8. Before making changes to the original solution, ask for confirmation unless an explicit calling autonomy contract already covers the change. Document every change in the plan file's Changelog section with timestamps.
 9. Before handing over to review, ensure all tasks in the delegated scope have been completed and the feature meets the defined requirements. Update the acceptance criteria checklist after every verified item.
 
 Ensure to write clean, efficient, and maintainable code following best practices and coding standards for the project.
 
-<!-- FABRICO_COLLECTIONS:command:fabrico-implement-common-task:v1 -->
+<!-- FABRICO_COLLECTIONS:command:fabrico-implement-common-task:v2 -->

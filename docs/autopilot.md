@@ -66,4 +66,5 @@ matches your intent.
 ## Related
 
 - A worked example spec ships as [`SPEC.md`](../SPEC.md) (a sports-club app).
+- To close the remaining gaps in an already started project, use `/fabrico-finish-project` instead.
 - To build from an existing app instead of a written spec, see [Legacy modernization](legacy-modernization.md).

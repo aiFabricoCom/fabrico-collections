@@ -135,5 +135,7 @@ fi
 printf "\n${G}Done.${R} Open Claude Code in your project and try:\n\n"
 printf "  ${C}/fabrico-implement${R} <task>            ${D}# orchestrated build${R}\n"
 printf "  ${C}/fabrico-autopilot${R} SPEC.md           ${D}# spec → working software${R}\n"
+printf "  ${C}/fabrico-finish-project${R} <path>       ${D}# partial project → verified completion${R}\n"
+printf "  ${C}/fabrico-improve-ui${R} <path> ios       ${D}# audit → improve → verify UI${R}\n"
 printf "  ${C}/fabrico-modernize${R} <url> ios         ${D}# rebuild a legacy app${R}\n\n"
 printf "${D}Docs: https://github.com/$REPO  ·  Uninstall: curl -fsSL https://raw.githubusercontent.com/$REPO/main/install.sh | bash -s -- --uninstall${R}\n\n"

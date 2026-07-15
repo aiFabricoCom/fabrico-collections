@@ -38,10 +38,19 @@ subagents. The core chain:
 
 - `/fabrico-implement` → **fabrico-engineering-manager** (orchestrator) → delegates to **fabrico-architect** (plan),
   **fabrico-software-engineer** / **fabrico-devops-engineer** / **fabrico-prompt-engineer** (build),
-  **fabrico-ui-reviewer** (Figma/UI verification), then **fabrico-code-reviewer** (quality gates).
+  **fabrico-ui-reviewer** (web Figma/UI verification), then **fabrico-code-reviewer** (quality gates).
 - `/fabrico-analyze-materials` → **fabrico-business-analyst** → BA worker subagents (transcript, extraction,
   analysis, quality, formatting) for turning workshop inputs into structured tasks.
 - `/fabrico-review` → **fabrico-code-reviewer** for structured code review and risk detection.
+- `/fabrico-finish-project` → **fabrico-engineering-manager** → completion contract, gap closure, verification, and
+  independent review for an existing partial project.
+- `/fabrico-improve-ui` → **fabrico-engineering-manager** → evidence-backed web, iOS, or Android audit, bounded
+  implementation, platform verification, and review.
+
+The engineering manager normally pauses between research, planning, and implementation. The explicit autonomy
+contracts in `/fabrico-autopilot`, `/fabrico-finish-project`, and `/fabrico-improve-ui` replace only those routine
+phase confirmations within their stated scope; they do not remove quality gates or broaden external-action
+authority.
 
 Subagents auto-activate by their `description`; commands route explicitly via a delegation directive at the top of
 the command body. Skills (`fabrico-*`) are model-invoked: Claude pulls in the relevant skill based on its

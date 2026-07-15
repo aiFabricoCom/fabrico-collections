@@ -5,6 +5,8 @@
 - [Claude Code](https://claude.com/claude-code) (CLI, desktop, web, or IDE extension).
 - For MCP-backed commands: `npx` (Node) and `uvx` (Python/`uv`) on PATH, plus credentials for the servers you
   enable (Figma, Atlassian/Jira, AWS, GCP, etc.).
+- For rendered native UI verification: Xcode with an iOS simulator and/or the Android SDK with an emulator or
+  connected device. Missing native runtimes limit `/fabrico-improve-ui` evidence but do not affect web workflows.
 
 ## Install
 
@@ -61,7 +63,7 @@ Several servers need credentials or local tooling — set those up before runnin
 
 Start Claude Code in **auto-accept-edits** mode (press **Shift+Tab**) so it doesn't prompt for each file write, and
 keep your work in **git** so every step is reversible. This matters most for [`/fabrico-autopilot`](autopilot.md)
-and [`/fabrico-modernize`](legacy-modernization.md).
+and [`/fabrico-modernize`](legacy-modernization.md), plus `/fabrico-finish-project` and `/fabrico-improve-ui`.
 
 ## Next
 

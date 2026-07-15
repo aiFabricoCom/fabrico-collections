@@ -18,6 +18,7 @@ Before starting, load and follow these skills:
 - `fabrico-implementation-gap-analysing` - for verifying what exists vs what needs to be built
 - `fabrico-technical-context-discovering` - for understanding project conventions and patterns
 - `fabrico-sql-and-database-understanding` - when the feature involves database schema design, data model changes, migrations, or query-heavy implementation
+- `fabrico-improving-ui` - when planning verification for web, iOS, Android, or shared-mobile UI
 
 ## Workflow
 
@@ -38,7 +39,7 @@ Before starting, load and follow these skills:
    - Action type: `[CREATE]`, `[MODIFY]`, or `[REUSE]`
    - Definition of done as a checkbox list for each task
 8. **Address security**: Include security considerations relevant to the implementation.
-9. **UI verification tasks**: For features with UI components based on Figma designs, add a `[REUSE]` UI verification task immediately after each implementation task that produces visible UI. The verification task should reference the `fabrico-ui-reviewer` subagent, include the Figma URL, and describe the verify-fix loop (max 5 iterations). Non-visual tasks (data fetching, state management, API integration) do not need verification tasks.
+9. **UI verification tasks**: Classify visible UI work by target. For **web UI with a Figma design**, add a `[REUSE]` verification task immediately after implementation; reference `fabrico-ui-reviewer`, include the Figma URL and running-page context, and describe the verify-fix loop (max 5 iterations). For **native iOS/Android or design-free UI**, add a `[REUSE]` platform verification task that follows `fabrico-improving-ui` and names the required build, simulator/emulator or device, states, accessibility, screenshot, lint, and test evidence. Never assign native or design-free verification to `fabrico-ui-reviewer` or require Playwright for it. Non-visual tasks do not need UI verification tasks.
 10. **Save the plan**: Follow the `plan.example.md` template from the `fabrico-architecture-designing` skill strictly.
 11. **Scope control**: Focus ONLY on changes specific to THIS task. Do not include prerequisite work or dependencies - assume those are already done. Do not plan features not in the original requirements (document them separately in an Improvements section).
 12. **Avoid duplication**: Never plan to create components, functions, or utilities that already exist. Use the "Current Implementation Analysis" section and plan to reuse or modify existing code.
@@ -52,4 +53,4 @@ In case of any ambiguities or missing information for the planning, ask for clar
 
 Update the plan file after each interaction if new information is gathered.
 
-<!-- FABRICO_COLLECTIONS:command:fabrico-plan:v1 -->
+<!-- FABRICO_COLLECTIONS:command:fabrico-plan:v2 -->

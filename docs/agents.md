@@ -24,7 +24,7 @@ tool (the model tier comes from each subagent's `model:` field). Pure reviewers 
 | `fabrico-software-engineer` | sonnet | Implements software solutions from requirements and technical designs. |
 | `fabrico-devops-engineer` | sonnet | DevOps: Golden Paths, automation, cloud governance, infrastructure. |
 | `fabrico-e2e-engineer` | sonnet | Creates, maintains, and debugs end-to-end tests with Playwright. |
-| `fabrico-ui-reviewer` | sonnet | Verifies implemented UI matches the Figma design and frontend guidelines. |
+| `fabrico-ui-reviewer` | sonnet | Compares a running web UI against Figma with Playwright; not used for native or design-free audits. |
 | `fabrico-prompt-engineer` | opus | Designs, writes, optimizes, and secures LLM application prompts. |
 
 ## Review

@@ -12,9 +12,9 @@ to a specialized subagent via the **Task** tool, and that subagent may delegate 
 - **Skills** (`.claude/skills/fabrico-*/`) — procedural knowledge Claude pulls in automatically when a task matches
   the skill's description.
 
-State flows between phases through **intermediate files**: `*.research.md`, `*.plan.md` (and `SPEC.md`,
-`MIGRATION-PLAN.md`, `BUILD-SUMMARY.md` for the autonomous flows). Don't delete them — they are the memory the
-agents resume from.
+State flows between phases through **intermediate files**: `*.research.md`, `*.plan.md`, `SPEC.md`,
+`MIGRATION-PLAN.md`, `BUILD-SUMMARY.md`, `COMPLETION-SUMMARY.md`, and `UI-IMPROVEMENT-REPORT.md`. Don't delete them
+— they are the memory the agents resume from.
 
 ## The golden path
 
@@ -45,11 +45,20 @@ before committing to extraction.
 3. **pauses for your confirmation** of the plan,
 4. delegates each task to the right specialist (`fabrico-software-engineer`, `fabrico-devops-engineer`,
    `fabrico-prompt-engineer`), running tests/lint/build after each,
-5. verifies UI work with `fabrico-ui-reviewer` (Figma + Playwright),
+5. verifies web Figma work with `fabrico-ui-reviewer` and native/design-free UI with platform evidence,
 6. hands off to `fabrico-code-reviewer` for the quality gates.
 
 For a single, well-scoped change it picks a **Quick flow** (engineer → review). For multi-component or ambiguous
 work it picks the **Full flow** (research → plan → implement → verify → review).
+
+Use `/fabrico-finish-project` when the unit of work is an existing partial project rather than one feature. It
+freezes an objective completion contract, implements only the remaining gaps, and maps every requirement to final
+evidence in `COMPLETION-SUMMARY.md`.
+
+Use `/fabrico-improve-ui` for an evidence-backed UI audit and bounded improvement pass across web, iOS, Android, or
+shared mobile code. It records platform coverage and before/after evidence in `UI-IMPROVEMENT-REPORT.md`. The
+`fabrico-ui-reviewer` remains specific to web Figma-versus-running-app comparison; native targets use their existing
+build, simulator/emulator or device, accessibility, UI, screenshot, lint, and test paths.
 
 ### 3. Review
 
@@ -64,7 +73,8 @@ The Full flow intentionally pauses at a few points:
 - **Flow choice** — Quick vs Full (you can override the recommendation).
 - **Plan confirmation** — review and adjust the `*.plan.md` before any code is written. This is the single biggest
   quality lever.
-- **UI verification gate** — every UI task must pass Figma/Playwright verification before code review.
+- **UI verification gate** — web Figma tasks require reviewer + Playwright evidence; native and design-free tasks
+  require the build/runtime, accessibility, screenshot, and project evidence defined by `fabrico-improving-ui`.
 
 If you'd rather not stop at each gate, use the autonomous flows below.
 
@@ -72,6 +82,10 @@ If you'd rather not stop at each gate, use the autonomous flows below.
 
 - **Autonomous build from a spec:** [`/fabrico-autopilot`](autopilot.md) runs the whole pipeline without per-gate
   pauses.
+- **Finish an existing project:** `/fabrico-finish-project` closes only the frozen remaining scope and proves the
+  definition of done.
+- **Improve an existing UI:** `/fabrico-improve-ui` audits, implements safe bounded improvements, and re-verifies
+  web, iOS, Android, or shared-mobile targets.
 - **Legacy modernization:** [`/fabrico-reverse-spec` and `/fabrico-modernize`](legacy-modernization.md) turn an
   existing web app into a spec and rebuild it.
 - **Infrastructure & cloud:** `/fabrico-implement-pipeline`, `/fabrico-implement-terraform`,

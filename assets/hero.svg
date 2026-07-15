@@ -15,5 +15,5 @@
   <text x="500" y="96" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="52" font-weight="700" fill="#f0f6fc">Fabrico Collections</text>
   <text x="500" y="134" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" fill="#8b949e">An opinionated Claude Code setup — your autonomous software team.</text>
   <text x="500" y="180" text-anchor="middle" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', monospace" font-size="17" fill="#58a6ff">/fabrico-analyze-materials  →  /fabrico-implement  →  /fabrico-review</text>
-  <text x="500" y="220" text-anchor="middle" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', monospace" font-size="14" fill="#3fb950">29 commands · 21 subagents · 34 skills · spec→app autopilot · legacy modernization</text>
+  <text x="500" y="220" text-anchor="middle" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', monospace" font-size="14" fill="#3fb950">31 commands · 21 subagents · 35 skills · spec→app autopilot · legacy modernization</text>
 </svg>

@@ -28,6 +28,8 @@ You do not need to learn every agent, command, or skill up front. For most teams
 
 - `/fabrico-analyze-materials` — turn workshop inputs (transcripts, notes, Figma, links) into structured tasks
 - `/fabrico-implement` — research, planning, and implementation, orchestrated end to end
+- `/fabrico-finish-project` — close the remaining scoped gaps in an existing partial project
+- `/fabrico-improve-ui` — audit and improve an existing web, iOS, or Android interface
 - `/fabrico-review` — structured code review
 
 The most important subagents behind those workflows:
@@ -45,6 +47,8 @@ Everything else is supporting structure.
 - This repository available on disk
 - For the MCP-backed commands: `npx` (Node) and `uvx` (Python/`uv`) on PATH, plus credentials for the servers you
   enable (Figma, Atlassian/Jira, AWS, GCP)
+- For rendered native verification: Xcode with an iOS simulator and/or the Android SDK with an emulator or connected
+  device. Without them, `/fabrico-improve-ui` limits the affected platform to partial or source-level evidence.
 
 ## Installation
 
@@ -113,6 +117,8 @@ Open your target project in Claude Code and run one of:
 
 - `/fabrico-create-spec <product idea>` — one-line idea → complete `SPEC.md`
 - `/fabrico-autopilot SPEC.md` — complete spec → working software, autonomously (see Autopilot above)
+- `/fabrico-finish-project /path/to/project` — existing partial project → verified completion
+- `/fabrico-improve-ui /path/to/project [web|ios|android]` — UI audit → bounded improvements → verification
 - `/fabrico-reverse-spec <url>` — running web app → platform-agnostic `SPEC.md` (via Chrome/Playwright)
 - `/fabrico-modernize <url|SPEC.md> [web|ios|react-native]` — reverse-spec → migration plan → rebuild
 - `/fabrico-implement <task or Jira ID>`

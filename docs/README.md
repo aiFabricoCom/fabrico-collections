@@ -4,7 +4,7 @@ Opinionated **Claude Code** setup for product discovery, implementation, review,
 modernization. This is a customization collection — a catalog of slash commands, subagents, and skills that turn
 Claude Code into a team of specialized agents.
 
-At a glance: **29 slash commands**, **21 subagents**, **34 skills**, all prefixed `fabrico-`.
+At a glance: **31 slash commands**, **21 subagents**, **35 skills**, all prefixed `fabrico-`.
 
 ## Guides
 
@@ -17,9 +17,9 @@ At a glance: **29 slash commands**, **21 subagents**, **34 skills**, all prefixe
 
 ## Reference
 
-- [Commands](commands.md) — all 29 `/fabrico-*` slash commands.
+- [Commands](commands.md) — all 31 `/fabrico-*` slash commands.
 - [Subagents](agents.md) — all 21 `fabrico-*` subagents and their model tiers.
-- [Skills](skills.md) — all 34 `fabrico-*` skills.
+- [Skills](skills.md) — all 35 `fabrico-*` skills.
 
 ## Quick start
 
@@ -35,6 +35,8 @@ Then open Claude Code in your project and try:
 
 - `/fabrico-implement <task>` — orchestrated research → plan → build → review
 - `/fabrico-autopilot SPEC.md` — complete spec → working software, autonomously
+- `/fabrico-finish-project /path/to/project` — close and verify an existing partial project
+- `/fabrico-improve-ui /path/to/project ios` — audit, improve, and verify an existing UI
 - `/fabrico-modernize <url> ios` — rebuild a legacy web app on a modern target
 
 > See the repository [`CLAUDE.md`](../CLAUDE.md) for the naming convention and orchestration model, and

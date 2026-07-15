@@ -1,6 +1,6 @@
 # Commands reference
 
-All 29 `/fabrico-*` slash commands. Invoke as `/fabrico-<name> <arguments>`. Many delegate to an owning subagent
+All 31 `/fabrico-*` slash commands. Invoke as `/fabrico-<name> <arguments>`. Many delegate to an owning subagent
 (see [Subagents](agents.md)).
 
 ## Discovery & backlog
@@ -19,7 +19,9 @@ All 29 `/fabrico-*` slash commands. Invoke as `/fabrico-<name> <arguments>`. Man
 | `/fabrico-research` | `[Jira ID or task description]` | Research a task and produce a comprehensive research markdown file. |
 | `/fabrico-review` | `[task or Jira ID, or path to plan/research files]` | Check the implementation against the plan and feature context. |
 | `/fabrico-review-codebase` | `[optional path or layer/app to scope]` | Code quality analysis: dead code, duplications, improvement opportunities. |
-| `/fabrico-review-ui` | `[Figma URL]` (running dev server) | Single-pass UI verification: implementation vs Figma. |
+| `/fabrico-review-ui` | `[Figma URL] [running web app URL]` | Single-pass web UI verification: browser implementation vs Figma. |
+| `/fabrico-improve-ui` | `[project path] [web\|ios\|android] [optional scope]` | Audit and safely improve an existing UI with platform-specific before/after verification. |
+| `/fabrico-finish-project` | `[project path and completion context]` | Close scoped gaps in an existing partial project and prove its definition of done. |
 
 ## Internal implementation sub-workflows
 
@@ -28,8 +30,8 @@ Specialized building blocks the engineering manager (or you) can invoke directly
 | Command | Arguments | What it does |
 | --- | --- | --- |
 | `/fabrico-implement-common-task` | `[path to *.plan.md or feature]` | Implement a feature strictly following a plan and feature context. |
-| `/fabrico-implement-ui` | `[task or Jira ID]` | Implement a UI feature with iterative verification against Figma. |
-| `/fabrico-implement-ui-common-task` | `[task or component]` | Implement a UI feature using Figma designs as the visual source of truth. |
+| `/fabrico-implement-ui` | `[task or Jira ID]` | Implement a web UI feature with iterative browser verification against Figma. |
+| `/fabrico-implement-ui-common-task` | `[task or component]` | Implement a web UI feature using Figma as the visual source of truth. |
 | `/fabrico-implement-e2e` | `[task, Jira ID, or plan/research path]` | Map acceptance criteria to E2E scenarios, build Page Objects, verify, report coverage. |
 | `/fabrico-review-plan` | `[task or Jira ID]` | Stress-test an implementation plan for failure modes before coding. |
 

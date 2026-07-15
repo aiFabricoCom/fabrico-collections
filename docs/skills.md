@@ -1,6 +1,6 @@
 # Skills reference
 
-All 34 `fabrico-*` skills. Skills are **model-invoked**: Claude pulls in the relevant skill automatically when a
+All 35 `fabrico-*` skills. Skills are **model-invoked**: Claude pulls in the relevant skill automatically when a
 task matches its description. You don't call them directly.
 
 ## Discovery & business analysis
@@ -34,6 +34,7 @@ task matches its description. You don't call them directly.
 | `fabrico-optimizing-frontend` | Rendering optimization, code splitting, memoization, bundle size, memory. |
 | `fabrico-reviewing-frontend` | Frontend review criteria: component anti-patterns, hooks quality, rendering. |
 | `fabrico-ui-verifying` | UI verification criteria, structure checklists, severity, Figma tolerance rules. |
+| `fabrico-improving-ui` | Evidence-backed audits and before/after verification for web, iOS, Android, and shared mobile UI. |
 
 ## Backend & data
 

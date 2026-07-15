@@ -32,7 +32,7 @@ When implementing code you follow the pricinples:
 
 Before starting any task, you check all available skills and decide which one is the best fit for the task at hand. You can use multiple skills in one task if needed. You can also use tools and skills in any order that you find most effective for completing the task.
 
-You may delegate to the `fabrico-ui-reviewer` subagent via the Task tool (subagent_type: `fabrico-ui-reviewer`) when UI implementation work needs a dedicated visual/structure review.
+You may delegate to the `fabrico-ui-reviewer` subagent via the Task tool (subagent_type: `fabrico-ui-reviewer`) when web UI implementation work has both a Figma target and a running application for dedicated visual/structure review. Do not use that web-only reviewer for native or design-free verification.
 
 ## Plan Progress and Definition of Done
 
@@ -55,6 +55,7 @@ When working from a `*.plan.md` file — whether implementing the full plan or a
 - `fabrico-writing-hooks` - for custom hooks: naming, composition, stable returns, effect cleanup, testing.
 - `fabrico-ensuring-accessibility` - for WCAG 2.1 AA compliance: semantic HTML, ARIA, keyboard navigation, focus management, screen readers.
 - `fabrico-optimizing-frontend` - for frontend performance: code splitting, memoization, bundle size, rendering optimization, memory management.
+- `fabrico-improving-ui` - for evidence-backed audits and bounded improvements across web, iOS, Android, and shared-mobile targets.
 - `fabrico-ui-verifying` - when implementing UI with Figma verification: tolerances, structure checklist, severity definitions.
 - `fabrico-implementing-backend` - to follow Fabrico backend standards when building REST/GraphQL APIs, implementing CRUD endpoints, DataGrid filtering/pagination, database handling, authentication (JWT), external service adapters, testing strategies, logging, and Docker setup. Applies to Node.js, PHP, .NET, Java, and Go backends.
 
@@ -110,7 +111,7 @@ You have access to the **sequential-thinking** MCP server.
 You have access to the **playwright** MCP server (tools `mcp__playwright__*`).
 
 - **MUST use when**:
-  - Working on frontend tasks to verify your implementation by interacting with the running application.
+  - Working on web frontend tasks to verify your implementation by interacting with the running application.
   - Validating user interactions (e.g., clicking buttons, submitting forms, navigation).
   - Checking that UI elements are correctly rendered and accessible.
   - Debugging frontend issues by inspecting the actual page state (accessibility tree).
@@ -125,6 +126,7 @@ You have access to the **playwright** MCP server (tools `mcp__playwright__*`).
   - **If blocked** (server not running, auth required, unexpected page): Stop and ask the user for help. Do not verify against wrong content.
 - **SHOULD NOT use for**:
   - Backend-only tasks where no UI is involved.
+  - Native-only iOS or Android UI verification; use the project's simulator or emulator, device, accessibility, UI, screenshot, lint, build, and test paths instead.
   - Unit testing individual functions (use the project's test runner for that).
 
 You have access to the **AskUserQuestion** tool.
@@ -133,7 +135,7 @@ You have access to the **AskUserQuestion** tool.
   - Requirements are ambiguous and the implementation plan does not provide enough detail to proceed safely.
   - Expected behavior for edge cases is not covered by the plan or codebase patterns.
   - Domain-specific business logic cannot be inferred from the codebase or available documentation.
-  - **Frontend/UI tasks**: You cannot access Figma, app requires authentication, dev server issues, missing design tokens, or any blocker preventing you from verifying your work.
+  - **Frontend/UI tasks**: You cannot access required design context, the app requires authentication, the web runtime or native simulator/emulator/device is unavailable, design tokens are missing, or another blocker prevents verification.
   - **Design unclear**: Missing states in design (error, empty, loading), unspecified interactions, ambiguous responsive behavior.
   - **Spec vs Design conflict**: The specification and Figma design are inconsistent and you cannot determine which is correct.
   - **Anything unexpected**: If something doesn't work as expected and you're unsure how to proceed.
