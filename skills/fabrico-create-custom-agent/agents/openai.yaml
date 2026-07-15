@@ -1,7 +1,0 @@
-interface:
-  display_name: "Fabrico Create Custom Agent"
-  short_description: "Create a focused Codex custom agent"
-  default_prompt: "Use $fabrico-collections:fabrico-create-custom-agent to create a read-only architecture reviewer."
-
-policy:
-  allow_implicit_invocation: false

@@ -1,7 +1,0 @@
-interface:
-  display_name: "Fabrico Explore Materials"
-  short_description: "Run the explore materials workflow with Fabrico"
-  default_prompt: "Use $fabrico-collections:fabrico-explore-materials to run this workflow for my request."
-
-policy:
-  allow_implicit_invocation: false

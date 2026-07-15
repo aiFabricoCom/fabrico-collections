@@ -1,7 +1,0 @@
-interface:
-  display_name: "Fabrico Modernize"
-  short_description: "Run the modernize workflow with Fabrico"
-  default_prompt: "Use $fabrico-collections:fabrico-modernize to run this workflow for my request."
-
-policy:
-  allow_implicit_invocation: false

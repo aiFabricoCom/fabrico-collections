@@ -1,7 +1,0 @@
-interface:
-  display_name: "Fabrico Implement Observability"
-  short_description: "Run the implement observability workflow with Fabrico"
-  default_prompt: "Use $fabrico-collections:fabrico-implement-observability to run this workflow for my request."
-
-policy:
-  allow_implicit_invocation: false

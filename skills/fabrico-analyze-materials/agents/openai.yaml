@@ -1,7 +1,0 @@
-interface:
-  display_name: "Fabrico Analyze Materials"
-  short_description: "Run the analyze materials workflow with Fabrico"
-  default_prompt: "Use $fabrico-collections:fabrico-analyze-materials to run this workflow for my request."
-
-policy:
-  allow_implicit_invocation: false

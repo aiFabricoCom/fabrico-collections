@@ -1,7 +1,0 @@
-interface:
-  display_name: "Fabrico Create Custom Skill"
-  short_description: "Create a reusable supporting skill"
-  default_prompt: "Use $fabrico-collections:fabrico-create-custom-skill to package this repeatable engineering procedure."
-
-policy:
-  allow_implicit_invocation: false

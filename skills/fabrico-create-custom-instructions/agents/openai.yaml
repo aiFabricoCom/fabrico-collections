@@ -1,7 +1,0 @@
-interface:
-  display_name: "Fabrico Create Custom Instructions"
-  short_description: "Create durable Codex project guidance"
-  default_prompt: "Use $fabrico-collections:fabrico-create-custom-instructions to document this repository's build and review rules."
-
-policy:
-  allow_implicit_invocation: false

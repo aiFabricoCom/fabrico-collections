@@ -1,7 +1,0 @@
-interface:
-  display_name: "Fabrico Review Plan"
-  short_description: "Run the review plan workflow with Fabrico"
-  default_prompt: "Use $fabrico-collections:fabrico-review-plan to run this workflow for my request."
-
-policy:
-  allow_implicit_invocation: false

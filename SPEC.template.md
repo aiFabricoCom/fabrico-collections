@@ -1,7 +1,6 @@
 # <Product name> — Specification
 
-> Copy this file into your project as `SPEC.md`, fill it in, then invoke `$fabrico-autopilot SPEC.md` in a repository
-> or filesystem install, or `$fabrico-collections:fabrico-autopilot SPEC.md` in a plugin install.
+> Copy this file into your project as `SPEC.md`, fill it in, then run `/fabrico-autopilot SPEC.md`.
 > The more complete each section, the more of the build runs autonomously without stopping to ask you.
 > Examples below are for a sports-club app — replace them with your product.
 

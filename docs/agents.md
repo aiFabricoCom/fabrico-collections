@@ -1,68 +1,58 @@
-# Custom agents reference
+# Subagents reference
 
-Fabrico defines 21 project-scoped Codex agents in `.codex/agents/fabrico-*.toml`. Entry workflow skills tell Codex
-which role to spawn and what bounded task to delegate. Each TOML file contains `name`, `description`, and
-`developer_instructions`; specialized settings such as `model_reasoning_effort` and `sandbox_mode` are used only
-where the role needs them.
-
-The reasoning profile expresses workload, not a vendor-specific model family:
-
-- **high** — orchestration, architecture, and adversarial review
-- **medium** — implementation and focused customization work
-- **low** — narrow, repeatable worker tasks
+All 21 `fabrico-*` subagents. They auto-activate by their description, or are launched explicitly via the **Task**
+tool (the model tier comes from each subagent's `model:` field). Pure reviewers are read-only (no Edit/Write).
 
 ## Orchestration
 
-| Custom agent | Reasoning | Role |
+| Subagent | Model | Role |
 | --- | --- | --- |
-| `fabrico-engineering-manager` | high | Coordinates end-to-end delivery and delegates implementation; does not write product code itself. |
+| `fabrico-engineering-manager` | opus | Orchestrator that delegates implementation to specialists; coordinates end-to-end feature delivery. Does not write product code itself. |
 
 ## Planning & architecture
 
-| Custom agent | Reasoning | Role |
+| Subagent | Model | Role |
 | --- | --- | --- |
-| `fabrico-architect` | high | Designs solution architecture and produces technical `*.plan.md` files. |
-| `fabrico-plan-reviewer` | high | Stress-tests plans for failure modes and rework risk; writes the bounded `*.plan-review.md` result without changing implementation code. |
-| `fabrico-context-engineer` | high | Gathers requirements and builds comprehensive feature context. |
+| `fabrico-architect` | opus | Designs solution architecture and technical specifications; produces `*.plan.md`. |
+| `fabrico-plan-reviewer` | opus | Adversarially stress-tests plans (`.plan.md`) for failure modes and rework risk. Returns APPROVED / REVISIONS NEEDED. Read-only. |
+| `fabrico-context-engineer` | opus | Builds task context: gathers requirements, analyzes processes, assembles comprehensive feature context. |
 
 ## Implementation
 
-| Custom agent | Reasoning | Role |
+| Subagent | Model | Role |
 | --- | --- | --- |
-| `fabrico-software-engineer` | medium | Implements software from requirements and technical designs. |
-| `fabrico-devops-engineer` | medium | Handles Golden Paths, automation, cloud governance, and infrastructure. |
-| `fabrico-e2e-engineer` | medium | Creates, maintains, and debugs Playwright end-to-end tests. |
-| `fabrico-ui-reviewer` | medium | Verifies implemented UI against Figma and frontend guidelines. |
-| `fabrico-prompt-engineer` | high | Designs, optimizes, and secures prompts used by LLM applications. |
+| `fabrico-software-engineer` | sonnet | Implements software solutions from requirements and technical designs. |
+| `fabrico-devops-engineer` | sonnet | DevOps: Golden Paths, automation, cloud governance, infrastructure. |
+| `fabrico-e2e-engineer` | sonnet | Creates, maintains, and debugs end-to-end tests with Playwright. |
+| `fabrico-ui-reviewer` | sonnet | Verifies implemented UI matches the Figma design and frontend guidelines. |
+| `fabrico-prompt-engineer` | opus | Designs, writes, optimizes, and secures LLM application prompts. |
 
 ## Review
 
-| Custom agent | Reasoning | Role |
+| Subagent | Model | Role |
 | --- | --- | --- |
-| `fabrico-code-reviewer` | high | Performs structured code review, runs quality gates, and writes only requested review documentation or checklist updates. |
+| `fabrico-code-reviewer` | opus | Performs structured code review and runs quality gates. Read-only. |
 
 ## Discovery & business analysis
 
-| Custom agent | Reasoning | Role |
+| Subagent | Model | Role |
 | --- | --- | --- |
-| `fabrico-business-analyst` | high | Converts discovery materials into Jira-ready epics and stories and coordinates the BA workers below. |
-| `fabrico-ba-transcript-worker` | low | Cleans and structures raw workshop transcripts. |
-| `fabrico-ba-extraction-worker` | low | Drafts intent briefs and extracts epics and stories. |
-| `fabrico-ba-analysis-worker` | low | Synthesizes workshop context, backlog overlap, and open questions. |
-| `fabrico-ba-quality-worker` | low | Runs Lite or Full BA quality review passes. |
-| `fabrico-ba-formatting-worker` | low | Produces Jira-ready formatting and read-back verification. |
+| `fabrico-business-analyst` | opus | Converts discovery materials (transcripts, designs, codebase) into Jira-ready epics and user stories. Orchestrates the BA workers below. |
+| `fabrico-ba-transcript-worker` | haiku | Cleans and structures raw workshop transcripts. |
+| `fabrico-ba-extraction-worker` | haiku | Drafts intent briefs and extracts epics/stories. |
+| `fabrico-ba-analysis-worker` | haiku | Synthesizes workshop context, backlog overlap, and open questions. |
+| `fabrico-ba-quality-worker` | haiku | Runs Lite/Full BA quality review passes; returns structured findings. |
+| `fabrico-ba-formatting-worker` | haiku | Prepares Jira-ready formatting and read-back verification. |
 
-## Codex customization
+## Customization (meta — authoring Claude Code artifacts)
 
-| Custom agent | Reasoning | Role |
+| Subagent | Model | Role |
 | --- | --- | --- |
-| `fabrico-customization-orchestrator` | high | Coordinates complex customization work through researcher → creator → reviewer. |
-| `fabrico-customization-engineer` | high | Designs and improves Codex agents, skills, project guidance, and configuration. |
-| `fabrico-customization-researcher` | medium | Researches current Codex formats and workspace patterns. Read-only. |
-| `fabrico-customization-creator` | medium | Builds and updates Codex customization artifacts. |
-| `fabrico-customization-reviewer` | high | Reviews customization artifacts against current formats and repository conventions. Read-only. |
+| `fabrico-customization-orchestrator` | opus | Orchestrates complex, multi-step customization work; delegates to researcher → creator → reviewer. |
+| `fabrico-customization-engineer` | sonnet | Prompt/context/AI engineering for creating and improving Claude Code customizations. |
+| `fabrico-customization-researcher` | sonnet | Gathers and summarizes information from codebases/docs for customization authoring. Read-only. |
+| `fabrico-customization-creator` | sonnet | Builds and modifies customization artifacts (subagents, skills, commands, `CLAUDE.md`). |
+| `fabrico-customization-reviewer` | sonnet | Evaluates customization artifacts against best practices; structured findings by severity. Read-only. |
 
-Read-only roles use Codex sandbox configuration and behavioral constraints rather than a hard-coded tool-name
-allowlist. The code and plan reviewers deliberately use `workspace-write` only to persist named review reports and
-review-owned checklist updates; their contracts prohibit product-code changes. See [Extending](extending.md) to
-create another custom agent.
+> Model tiers: **opus** for orchestration/architecture/review reasoning, **sonnet** for implementation, **haiku**
+> for lightweight workers. See [Extending](extending.md) to author your own.

@@ -1,7 +1,0 @@
-interface:
-  display_name: "Fabrico Audit Infrastructure"
-  short_description: "Run the audit infrastructure workflow with Fabrico"
-  default_prompt: "Use $fabrico-collections:fabrico-audit-infrastructure to run this workflow for my request."
-
-policy:
-  allow_implicit_invocation: false

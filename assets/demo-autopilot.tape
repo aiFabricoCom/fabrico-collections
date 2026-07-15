@@ -6,7 +6,7 @@
 #                              s|assets/demo-autopilot.svg|assets/demo-autopilot.gif|
 #
 # This records the scripted demo (assets/demo-autopilot.sh) for a deterministic, short clip.
-# To record a REAL run instead, launch Codex, then type "$fabrico-autopilot SPEC.md" in the composer.
+# To record a REAL run instead, replace the Type line with:  Type "claude"  Enter  ...  Type "/fabrico-autopilot SPEC.md"
 
 Output assets/demo-autopilot.gif
 

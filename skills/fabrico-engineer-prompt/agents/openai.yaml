@@ -1,7 +1,0 @@
-interface:
-  display_name: "Fabrico Engineer Prompt"
-  short_description: "Run the engineer prompt workflow with Fabrico"
-  default_prompt: "Use $fabrico-collections:fabrico-engineer-prompt to run this workflow for my request."
-
-policy:
-  allow_implicit_invocation: false

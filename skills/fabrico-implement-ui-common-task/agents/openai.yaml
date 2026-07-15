@@ -1,7 +1,0 @@
-interface:
-  display_name: "Fabrico Implement Ui Common Task"
-  short_description: "Run the implement ui common task workflow with Fabrico"
-  default_prompt: "Use $fabrico-collections:fabrico-implement-ui-common-task to run this workflow for my request."
-
-policy:
-  allow_implicit_invocation: false
